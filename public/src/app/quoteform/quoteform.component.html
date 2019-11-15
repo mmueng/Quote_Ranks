@@ -1,0 +1,11 @@
+<p>quoteform works!</p>
+
+<form> {{errors.content}}
+    <div *ngIf="!content.valid"> Quote is required</div>
+    <label for="">Quote:
+        <input type="text" name="content" [(ngModel)]="editAuth.content" required minlength="2" maxlength="24"
+            #content="ngModel" />
+    </label>
+
+    <input (click)="onEditaddQuote()" type="submit" value="Add Quote" />
+</form>

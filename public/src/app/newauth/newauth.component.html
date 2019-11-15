@@ -1,0 +1,13 @@
+<p>newauth works!</p>
+<form (submit)="addAuthsFromService()">
+    <!-- use the json pipe to see how newTask changes in real time -->
+    {{errors.name}}
+    <div *ngIf="!name.valid"> Name is required</div>
+    <label for="">Name:
+        <!-- {{name.errors | json}}
+        {{name.valid | json}} -->
+        <input type="text" name="name" [(ngModel)]="newAuth.name" required minlength="2" maxlength="24"
+            #name="ngModel" />
+    </label>
+    <input type="submit" value="Add Author" />
+</form>

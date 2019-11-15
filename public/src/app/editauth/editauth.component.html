@@ -1,0 +1,10 @@
+<p>editauth works!</p>
+<form> {{errors.name}}
+    <div *ngIf="!name.valid"> Name is required</div>
+    <label for="">name:
+        <input type="text" name="name" [(ngModel)]="editAuth.name" required minlength="2" maxlength="24"
+            #name="ngModel" />
+    </label>
+
+    <input (click)="onEdit()" type="submit" value="Edit Author" />
+</form>

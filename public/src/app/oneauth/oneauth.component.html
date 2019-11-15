@@ -1,0 +1,23 @@
+<p>oneauth works!</p>
+<button routerLink="/">Home</button>
+
+
+<h1>{{oneAuth.name}}</h1>
+
+<button routerLink="/quote/new/{{oneAuth._id}}">Add a quote</button>
+<div *ngFor="let auth of oneAuth.quotes">
+    <table class="table">
+        <tr>
+            <td>Quotes</td>
+            <td>Votes</td>
+            <td>Action</td>
+        </tr>
+        <tr>
+            <td>{{auth.content}}</td>
+            <td>{{auth.votes}}</td>
+            <td><button (click)="voteOneQuotefromService(oneAuth._id,auth._id)">Vote up</button> | <button
+                    (click)="dvoteOneQuotefromService(oneAuth._id,auth._id)">Vote up</button> | <button
+                    (click)="delelteOneQuotefromService(oneAuth._id,auth._id)">Delete</button></td>
+        </tr>
+    </table>
+</div>
